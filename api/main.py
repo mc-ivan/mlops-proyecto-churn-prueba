@@ -1,6 +1,7 @@
 from pathlib import Path
 
 import joblib
+import json
 
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel, Field
@@ -11,6 +12,12 @@ MODEL_PATH = PROJECT_ROOT / "models" / "modelo_churn_v1.joblib"
 
 VERSION_MODELO = "modelo_churn_v1"
 AUTOR = "Ivan Mamani"
+
+METADATA_PATH = (
+    PROJECT_ROOT
+    / "models"
+    / "modelo_churn_v1_metadata.json"
+)
 
 if not MODEL_PATH.exists():
     raise RuntimeError(
@@ -87,6 +94,23 @@ def info():
         ],
         "descripcion": "Modelo de prediccion de abandono de clientes"
     }
+
+@app.get("/model-metadata")
+def model_metadata():
+    try:
+        with open(
+            METADATA_PATH,
+            "r",
+            encoding="utf-8"
+        ) as archivo:
+            metadata = json.load(archivo)
+        return metadata
+
+    except Exception as exc:
+        raise HTTPException(
+            status_code=500,
+            detail="No fue posible leer los metadatos del modelo."
+        ) from exc
 
 @app.post("/predict", response_model=PrediccionSalida)
 def predict(datos: ClienteEntrada):
