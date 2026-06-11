@@ -75,6 +75,19 @@ def health():
         "modelo": VERSION_MODELO,
     }
 
+@app.get("/info")
+def info():
+    return {
+        "modelo": VERSION_MODELO,
+        "autor": AUTOR,
+        "variables": [
+            "antiguedad",
+            "cargo_mensual",
+            "reclamos"
+        ],
+        "descripcion": "Modelo de prediccion de abandono de clientes"
+    }
+
 @app.post("/predict", response_model=PrediccionSalida)
 def predict(datos: ClienteEntrada):
     try:
