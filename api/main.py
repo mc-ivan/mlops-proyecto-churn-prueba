@@ -73,6 +73,7 @@ def inicio():
         "mensaje": "Servicio ML-Ops activo",
         "estado": "ok",
         "autor": AUTOR,
+        "estudiante": "Ivan Mamani Condori"
     }
 
 @app.get("/health")
