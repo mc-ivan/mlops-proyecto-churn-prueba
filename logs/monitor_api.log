@@ -53,3 +53,18 @@
 2026-06-15 00:03:38,138 | WARNING | Valores fuera de rango histórico: ['reclamos=100 fuera del rango histórico [0, 7]']
 2026-06-15 00:03:38,156 | INFO | Predicción | resultado=alto_riesgo | probabilidad=1.0000 | alertas=1
 2026-06-15 00:03:38,157 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=23.584
+2026-06-15 00:08:41,382 | INFO | Modelo cargado correctamente: modelo_churn_v1
+2026-06-15 00:11:10,022 | INFO | Modelo cargado correctamente: modelo_churn_v1
+2026-06-15 00:11:52,138 | INFO | Modelo cargado correctamente: modelo_churn_v1
+2026-06-15 00:12:27,246 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.0725 | alertas=0
+2026-06-15 00:12:27,246 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=22.123
+2026-06-15 00:12:27,250 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.8848 | alertas=0
+2026-06-15 00:12:27,251 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.545
+2026-06-15 00:12:27,256 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9978 | alertas=0
+2026-06-15 00:12:27,257 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.803
+2026-06-15 00:12:27,261 | WARNING | Valores fuera de rango histórico: ['antiguedad=180 fuera del rango histórico [1, 72]', 'cargo_mensual=600.0 fuera del rango histórico [20.0, 150.0]', 'reclamos=35 fuera del rango histórico [0, 7]']
+2026-06-15 00:12:27,262 | INFO | Predicción | resultado=alto_riesgo | probabilidad=1.0000 | alertas=3
+2026-06-15 00:12:27,262 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.917
+2026-06-15 00:12:27,266 | WARNING | Error de validación | ruta=/predict | detalle=[{'type': 'greater_than_equal', 'loc': ('body', 'cargo_mensual'), 'msg': 'Input should be greater than or equal to 0', 'input': -50.0, 'ctx': {'ge': 0.0}}]
+2026-06-15 00:12:27,268 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=422 | latencia_ms=2.413
+2026-06-15 00:12:27,272 | INFO | Solicitud | metodo=GET | ruta=/metrics | estado=200 | latencia_ms=0.988
