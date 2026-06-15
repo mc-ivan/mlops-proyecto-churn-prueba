@@ -6,3 +6,4 @@ joblib
 pytest
 httpx
 requests
+prometheus-client==0.22.1

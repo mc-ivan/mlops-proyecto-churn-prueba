@@ -59,6 +59,26 @@ from pydantic import BaseModel, Field
 # BaseModel define la estructura esperada de los datos.
 # Field agrega reglas de validación.
 
+from prometheus_client import Counter as PromCounter
+# Define métricas de tipo contador para registrar eventos acumulativos,
+# como cantidad de solicitudes, errores o predicciones realizadas.
+
+from prometheus_client import Histogram as PromHistogram
+# Define métricas de tipo histograma para medir distribuciones,
+# como tiempos de respuesta o duración de operaciones.
+
+from prometheus_client import generate_latest
+# Genera la representación de todas las métricas registradas
+# en el formato de texto que Prometheus puede consumir.
+
+from prometheus_client import CONTENT_TYPE_LATEST
+# Define el Content-Type oficial utilizado por Prometheus
+# para exponer métricas a través de un endpoint HTTP.
+
+from fastapi.responses import Response
+# Permite construir respuestas HTTP personalizadas,
+# incluyendo el contenido y encabezados necesarios para el endpoint de métricas.
+
 # ============================================================
 # BLOQUE 2. CONFIGURACIÓN GENERAL DEL PROYECTO
 # ============================================================
@@ -178,6 +198,43 @@ metricas = {
 # Lock evita que dos solicitudes modifiquen simultáneamente
 # los mismos contadores.
 metricas_lock = Lock()
+
+# ============================================================
+# MÉTRICAS PROMETHEUS
+# ============================================================
+
+#
+# Estas métricas permiten integrar la API con Prometheus.
+#
+# No reemplazan el endpoint /metrics.
+# Ambas soluciones coexistirán.
+#
+REQUESTS_TOTAL = PromCounter(
+    "api_requests_total",
+    "Cantidad total de solicitudes procesadas",
+)
+
+HTTP_RESPONSES_TOTAL = PromCounter(
+    "api_http_responses_total",
+    "Cantidad de respuestas HTTP",
+    ["status_code"],
+)
+
+REQUEST_LATENCY_SECONDS = PromHistogram(
+    "api_request_latency_seconds",
+    "Latencia observada en segundos",
+)
+
+PREDICCIONES_TOTAL = PromCounter(
+    "api_predictions_total",
+    "Cantidad de predicciones realizadas",
+    ["resultado"],
+)
+
+ANOMALIAS_TOTAL = PromCounter(
+    "api_anomalies_total",
+    "Cantidad de solicitudes con valores fuera del rango historico",
+)
 
 # ============================================================
 # BLOQUE 7. MODELOS DE DATOS Y VALIDACIÓN DE ENTRADAS
@@ -370,6 +427,17 @@ async def registrar_solicitud(request: Request, call_next):
         # Ejemplos: 200, 422 y 500.
         metricas["codigos_http"][str(response.status_code)] += 1
 
+        # MÉTRICAS PROMETHEUS
+        REQUESTS_TOTAL.inc()
+
+        HTTP_RESPONSES_TOTAL.labels(
+            status_code=str(response.status_code),
+        ).inc()
+
+        REQUEST_LATENCY_SECONDS.observe(
+            latencia_ms / 1000,
+        )
+
     # Registrar información de la solicitud en consola y archivo.
     logger.info(
         "Solicitud | metodo=%s | ruta=%s | estado=%s | latencia_ms=%.3f",
@@ -509,6 +577,12 @@ def predict(datos: ClienteEntrada) -> PrediccionSalida:
             else "bajo_riesgo"
         )
 
+        # MÉTRICAS PROMETHEUS
+        # Registrar el resultado de la predicción para
+        # posteriores consultas desde Prometheus y Grafana.
+        PREDICCIONES_TOTAL.labels(
+            resultado=etiqueta,
+        ).inc()
 
         # Paso 5. Actualizar las métricas de predicción.
         with metricas_lock:
@@ -517,6 +591,9 @@ def predict(datos: ClienteEntrada) -> PrediccionSalida:
 
             if alertas:
                 metricas["solicitudes_con_anomalias"] += 1
+                # Registrar una solicitud con datos fuera del rango histórico observado
+                # durante el entrenamiento.
+                ANOMALIAS_TOTAL.inc()
 
         # Paso 6. Registrar una advertencia si existen datos atípicos.
         if alertas:
@@ -556,3 +633,24 @@ def predict(datos: ClienteEntrada) -> PrediccionSalida:
             status_code=500,
             detail="No fue posible generar la predicción.",
         ) from exc
+
+# ============================================================
+# ENDPOINT PROMETHEUS
+# ============================================================
+@app.get(
+    "/prometheus",
+    tags=["Monitoreo"],
+)
+def obtener_metricas_prometheus():
+    """
+    Expone métricas compatibles con Prometheus.
+
+    Este endpoint es consultado periódicamente
+    por Prometheus para recopilar indicadores
+    operativos de la API.
+    """
+
+    return Response(
+        generate_latest(),
+        media_type=CONTENT_TYPE_LATEST,
+    )
