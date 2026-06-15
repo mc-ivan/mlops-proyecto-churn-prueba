@@ -68,3 +68,18 @@
 2026-06-15 00:12:27,266 | WARNING | Error de validación | ruta=/predict | detalle=[{'type': 'greater_than_equal', 'loc': ('body', 'cargo_mensual'), 'msg': 'Input should be greater than or equal to 0', 'input': -50.0, 'ctx': {'ge': 0.0}}]
 2026-06-15 00:12:27,268 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=422 | latencia_ms=2.413
 2026-06-15 00:12:27,272 | INFO | Solicitud | metodo=GET | ruta=/metrics | estado=200 | latencia_ms=0.988
+2026-06-15 05:06:24,793 | INFO | Modelo cargado correctamente: modelo_churn_v1
+2026-06-15 05:06:36,358 | INFO | Solicitud | metodo=GET | ruta=/ | estado=200 | latencia_ms=6.263
+2026-06-15 05:06:47,696 | INFO | Solicitud | metodo=GET | ruta=/metrics | estado=200 | latencia_ms=1.043
+2026-06-15 05:06:52,754 | INFO | Solicitud | metodo=GET | ruta=/docs | estado=200 | latencia_ms=2.386
+2026-06-15 05:06:53,162 | INFO | Solicitud | metodo=GET | ruta=/openapi.json | estado=200 | latencia_ms=33.111
+2026-06-15 05:06:58,841 | WARNING | Valores fuera de rango histórico: ['antiguedad=240 fuera del rango histórico [1, 72]', 'cargo_mensual=5000.0 fuera del rango histórico [20.0, 150.0]', 'reclamos=100 fuera del rango histórico [0, 7]']
+2026-06-15 05:06:58,845 | INFO | Predicción | resultado=alto_riesgo | probabilidad=1.0000 | alertas=3
+2026-06-15 05:06:58,847 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=37.342
+2026-06-15 05:07:12,430 | WARNING | Valores fuera de rango histórico: ['reclamos=23 fuera del rango histórico [0, 7]']
+2026-06-15 05:07:12,434 | INFO | Predicción | resultado=alto_riesgo | probabilidad=1.0000 | alertas=1
+2026-06-15 05:07:12,437 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=11.634
+2026-06-15 05:07:23,181 | WARNING | Error de validación | ruta=/predict | detalle=[{'type': 'greater_than_equal', 'loc': ('body', 'reclamos'), 'msg': 'Input should be greater than or equal to 0', 'input': -6, 'ctx': {'ge': 0}}]
+2026-06-15 05:07:23,187 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=422 | latencia_ms=12.991
+2026-06-15 05:07:32,032 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.8573 | alertas=0
+2026-06-15 05:07:32,035 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=7.569
