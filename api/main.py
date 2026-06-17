@@ -620,6 +620,44 @@ def model_monitoring():
     }
 
 # ============================================================
+# BLOQUE 17. ENDPOINT GET /model-drift
+# ============================================================
+
+@app.get(
+    "/model-drift",
+    tags=["Monitoreo"],
+)
+def model_drift():
+    """
+    Indicador básico de drift utilizando anomalías observadas.
+    """
+
+    resumen = resumen_metricas()
+
+    total = resumen["solicitudes_totales"]
+
+    anomalias = resumen["solicitudes_con_anomalias"]
+
+    porcentaje = (
+        (anomalias / total) * 100
+        if total
+        else 0
+    )
+
+    drift_detectado = porcentaje >= 10
+
+    return {
+        "drift_detectado": drift_detectado,
+        "solicitudes_totales": total,
+        "solicitudes_con_anomalias": anomalias,
+        "porcentaje_anomalias": round(
+            porcentaje,
+            2,
+        ),
+        "umbral_alerta": 10,
+    }
+
+# ============================================================
 # BLOQUE 16. ENDPOINT POST /predict
 # ============================================================
 # AQUÍ SE IMPLEMENTA:

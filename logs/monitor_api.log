@@ -1311,3 +1311,59 @@
 2026-06-17 17:19:51,149 | INFO | Solicitud | metodo=GET | ruta=/model-monitoring | estado=200 | latencia_ms=0.544
 2026-06-17 17:19:51,674 | INFO | Solicitud | metodo=GET | ruta=/model-monitoring | estado=200 | latencia_ms=0.547
 2026-06-17 17:19:52,198 | INFO | Solicitud | metodo=GET | ruta=/model-monitoring | estado=200 | latencia_ms=0.562
+2026-06-17 17:22:14,653 | INFO | Modelo cargado correctamente: modelo_churn_v1
+2026-06-17 17:22:14,674 | INFO | Metadatos cargados correctamente
+2026-06-17 17:22:14,875 | INFO | Solicitud | metodo=GET | ruta=/model-monitoring | estado=200 | latencia_ms=5.265
+2026-06-17 17:22:30,133 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=1.128
+2026-06-17 17:22:34,658 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.532
+2026-06-17 17:22:41,488 | INFO | Solicitud | metodo=GET | ruta=/docs | estado=200 | latencia_ms=0.349
+2026-06-17 17:22:42,641 | INFO | Solicitud | metodo=GET | ruta=/openapi.json | estado=200 | latencia_ms=348.289
+2026-06-17 17:23:16,302 | WARNING | Valores fuera de rango histórico: ['antiguedad=240 fuera del rango histórico [1, 72]', 'cargo_mensual=5000.0 fuera del rango histórico [20.0, 150.0]', 'reclamos=100 fuera del rango histórico [0, 7]']
+2026-06-17 17:23:16,321 | INFO | Predicción | resultado=alto_riesgo | probabilidad=1.0000 | alertas=3
+2026-06-17 17:23:16,322 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=92.744
+2026-06-17 17:23:36,669 | WARNING | Valores fuera de rango histórico: ['antiguedad=180 fuera del rango histórico [1, 72]', 'cargo_mensual=1000.0 fuera del rango histórico [20.0, 150.0]', 'reclamos=20 fuera del rango histórico [0, 7]']
+2026-06-17 17:23:36,670 | INFO | Predicción | resultado=alto_riesgo | probabilidad=1.0000 | alertas=3
+2026-06-17 17:23:36,671 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=7.373
+2026-06-17 17:23:44,619 | WARNING | Valores fuera de rango histórico: ['antiguedad=180 fuera del rango histórico [1, 72]', 'cargo_mensual=1000.0 fuera del rango histórico [20.0, 150.0]', 'reclamos=20 fuera del rango histórico [0, 7]']
+2026-06-17 17:23:44,619 | INFO | Predicción | resultado=alto_riesgo | probabilidad=1.0000 | alertas=3
+2026-06-17 17:23:44,620 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=3.468
+2026-06-17 17:23:50,221 | WARNING | Error de validación | ruta=/predict | detalle=[{'type': 'greater_than_equal', 'loc': ('body', 'antiguedad'), 'msg': 'Input should be greater than or equal to 0', 'input': -180, 'ctx': {'ge': 0}}]
+2026-06-17 17:23:50,223 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=422 | latencia_ms=48.760
+2026-06-17 17:23:56,750 | WARNING | Error de validación | ruta=/predict | detalle=[{'type': 'int_parsing', 'loc': ('body', 'antiguedad'), 'msg': 'Input should be a valid integer, unable to parse string as an integer', 'input': 'dd'}]
+2026-06-17 17:23:56,750 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=422 | latencia_ms=190.833
+2026-06-17 17:24:06,206 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=1000.0 fuera del rango histórico [20.0, 150.0]', 'reclamos=20 fuera del rango histórico [0, 7]']
+2026-06-17 17:24:06,235 | INFO | Predicción | resultado=alto_riesgo | probabilidad=1.0000 | alertas=2
+2026-06-17 17:24:06,236 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=31.840
+2026-06-17 17:24:19,263 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9524 | alertas=0
+2026-06-17 17:24:19,291 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=29.027
+2026-06-17 17:24:26,914 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.526
+2026-06-17 17:24:42,321 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.509
+2026-06-17 17:24:43,496 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.536
+2026-06-17 17:24:46,360 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.572
+2026-06-17 17:24:49,224 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.542
+2026-06-17 17:24:49,801 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.502
+2026-06-17 17:24:50,439 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.510
+2026-06-17 17:24:50,936 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.632
+2026-06-17 17:24:51,568 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.563
+2026-06-17 17:24:52,419 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.510
+2026-06-17 17:24:53,128 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.506
+2026-06-17 17:24:53,613 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.532
+2026-06-17 17:24:54,024 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.591
+2026-06-17 17:24:55,007 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.535
+2026-06-17 17:24:55,448 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.713
+2026-06-17 17:24:55,839 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.509
+2026-06-17 17:24:56,352 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.516
+2026-06-17 17:24:58,032 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.665
+2026-06-17 17:24:59,289 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.537
+2026-06-17 17:24:59,871 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.540
+2026-06-17 17:25:00,431 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.662
+2026-06-17 17:25:01,064 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.529
+2026-06-17 17:25:01,970 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.523
+2026-06-17 17:25:02,800 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.627
+2026-06-17 17:25:03,207 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.646
+2026-06-17 17:25:03,528 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.514
+2026-06-17 17:25:05,017 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.664
+2026-06-17 17:25:05,767 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.602
+2026-06-17 17:25:06,640 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.516
+2026-06-17 17:25:08,343 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.510
+2026-06-17 17:25:09,506 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.686
