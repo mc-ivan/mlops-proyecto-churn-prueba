@@ -574,6 +574,52 @@ def metrics() -> dict:
     return resumen_metricas()
 
 # ============================================================
+# BLOQUE 16. ENDPOINT GET /model-monitoring
+# ============================================================
+@app.get(
+    "/model-monitoring",
+    tags=["Monitoreo"],
+)
+def model_monitoring():
+    """
+    Devuelve un resumen operativo del modelo.
+    """
+
+    resumen = resumen_metricas()
+
+    return {
+        "modelo": VERSION_MODELO,
+        "estado": "operativo",
+
+        "solicitudes_totales":
+            resumen["solicitudes_totales"],
+
+        "predicciones_validas":
+            resumen["predicciones_validas"],
+
+        "predicciones_alto_riesgo":
+            resumen["predicciones_alto_riesgo"],
+
+        "predicciones_bajo_riesgo":
+            resumen["predicciones_bajo_riesgo"],
+
+        "errores_validacion":
+            resumen["errores_validacion"],
+
+        "errores_internos":
+            resumen["errores_internos"],
+
+        "solicitudes_con_anomalias":
+            resumen["solicitudes_con_anomalias"],
+
+        "latencia_promedio_ms":
+            resumen["latencia_promedio_ms"],
+
+        "latencia_maxima_ms":
+            resumen["latencia_maxima_ms"],
+    }
+
+# ============================================================
 # BLOQUE 16. ENDPOINT POST /predict
 # ============================================================
 # AQUÍ SE IMPLEMENTA:

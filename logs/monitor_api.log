@@ -1288,3 +1288,26 @@
 2026-06-17 17:09:39,142 | INFO | Modelo cargado correctamente: modelo_churn_v1
 2026-06-17 17:09:39,163 | INFO | Metadatos cargados correctamente
 2026-06-17 17:09:39,432 | INFO | Solicitud | metodo=GET | ruta=/model-metadata | estado=200 | latencia_ms=18.780
+2026-06-17 17:12:02,773 | INFO | Modelo cargado correctamente: modelo_churn_v1
+2026-06-17 17:12:02,799 | INFO | Metadatos cargados correctamente
+2026-06-17 17:12:03,786 | INFO | Solicitud | metodo=GET | ruta=/metricas | estado=404 | latencia_ms=0.920
+2026-06-17 17:12:21,824 | INFO | Solicitud | metodo=GET | ruta=/metricas | estado=404 | latencia_ms=0.404
+2026-06-17 17:13:48,524 | INFO | Solicitud | metodo=GET | ruta=/metrics | estado=200 | latencia_ms=112.122
+2026-06-17 17:13:56,559 | INFO | Solicitud | metodo=GET | ruta=/metrics | estado=200 | latencia_ms=0.746
+2026-06-17 17:13:57,206 | INFO | Solicitud | metodo=GET | ruta=/metrics | estado=200 | latencia_ms=0.672
+2026-06-17 17:13:57,639 | INFO | Solicitud | metodo=GET | ruta=/metrics | estado=200 | latencia_ms=0.701
+2026-06-17 17:13:59,735 | INFO | Solicitud | metodo=GET | ruta=/metrics | estado=200 | latencia_ms=0.783
+2026-06-17 17:14:00,150 | INFO | Solicitud | metodo=GET | ruta=/metrics | estado=200 | latencia_ms=0.883
+2026-06-17 17:19:12,698 | INFO | Modelo cargado correctamente: modelo_churn_v1
+2026-06-17 17:19:12,711 | INFO | Metadatos cargados correctamente
+2026-06-17 17:19:16,682 | INFO | Modelo cargado correctamente: modelo_churn_v1
+2026-06-17 17:19:16,683 | INFO | Metadatos cargados correctamente
+2026-06-17 17:19:19,867 | INFO | Solicitud | metodo=GET | ruta=/metrics | estado=200 | latencia_ms=4.970
+2026-06-17 17:19:21,968 | INFO | Solicitud | metodo=GET | ruta=/metrics | estado=200 | latencia_ms=0.691
+2026-06-17 17:19:33,606 | INFO | Solicitud | metodo=GET | ruta=/model-monitoring | estado=200 | latencia_ms=1.234
+2026-06-17 17:19:37,592 | INFO | Solicitud | metodo=GET | ruta=/model-monitoring | estado=200 | latencia_ms=0.602
+2026-06-17 17:19:44,599 | INFO | Solicitud | metodo=GET | ruta=/model-monitoring | estado=200 | latencia_ms=0.522
+2026-06-17 17:19:49,333 | INFO | Solicitud | metodo=GET | ruta=/model-monitoring | estado=200 | latencia_ms=0.520
+2026-06-17 17:19:51,149 | INFO | Solicitud | metodo=GET | ruta=/model-monitoring | estado=200 | latencia_ms=0.544
+2026-06-17 17:19:51,674 | INFO | Solicitud | metodo=GET | ruta=/model-monitoring | estado=200 | latencia_ms=0.547
+2026-06-17 17:19:52,198 | INFO | Solicitud | metodo=GET | ruta=/model-monitoring | estado=200 | latencia_ms=0.562
