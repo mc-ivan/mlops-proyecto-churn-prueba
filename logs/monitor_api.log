@@ -1872,3 +1872,30 @@
 2026-06-17 17:46:06,702 | INFO | Metadatos cargados correctamente
 2026-06-17 17:46:22,384 | INFO | Modelo cargado correctamente: modelo_churn_v1
 2026-06-17 17:46:22,385 | INFO | Metadatos cargados correctamente
+2026-06-17 17:50:37,408 | INFO | Modelo cargado correctamente: modelo_churn_v1
+2026-06-17 17:50:37,424 | INFO | Metadatos cargados correctamente
+2026-06-17 17:51:22,083 | INFO | Modelo cargado correctamente: modelo_churn_v1
+2026-06-17 17:51:22,099 | INFO | Metadatos cargados correctamente
+2026-06-17 17:53:28,734 | INFO | Modelo cargado correctamente: modelo_churn_v1
+2026-06-17 17:53:28,749 | INFO | Metadatos cargados correctamente
+2026-06-17 17:53:54,007 | INFO | Modelo cargado correctamente: modelo_churn_v1
+2026-06-17 17:53:54,008 | INFO | Metadatos cargados correctamente
+2026-06-17 17:54:06,785 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=19.750
+2026-06-17 17:54:10,609 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.913
+2026-06-17 17:54:41,233 | INFO | Modelo cargado correctamente: modelo_churn_v1
+2026-06-17 17:54:41,233 | INFO | Metadatos cargados correctamente
+2026-06-17 17:54:42,630 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=4.522
+2026-06-17 17:54:45,140 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.554
+2026-06-17 17:54:46,027 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.564
+2026-06-17 17:54:47,113 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.916
+2026-06-17 17:54:48,759 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.618
+2026-06-17 17:54:49,294 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.524
+2026-06-17 17:54:49,753 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.550
+2026-06-17 17:54:49,930 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.525
+2026-06-17 17:54:50,105 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.561
+2026-06-17 17:54:50,288 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.965
+2026-06-17 17:54:50,458 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.928
+2026-06-17 17:54:50,603 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.570
+2026-06-17 17:55:03,169 | INFO | Solicitud | metodo=GET | ruta=/model-metadata | estado=200 | latencia_ms=0.803
+2026-06-17 17:55:06,489 | INFO | Solicitud | metodo=GET | ruta=/model-metadata | estado=200 | latencia_ms=0.528
+2026-06-17 17:55:08,600 | INFO | Solicitud | metodo=GET | ruta=/model-metadata | estado=200 | latencia_ms=0.526

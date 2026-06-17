@@ -42,6 +42,10 @@ import joblib
 
 import json
 
+import os
+
+from dotenv import load_dotenv
+
 
 from fastapi import FastAPI, HTTPException, Request
 # FastAPI crea la aplicación.
@@ -82,6 +86,11 @@ from fastapi.responses import Response
 # incluyendo el contenido y encabezados necesarios para el endpoint de métricas.
 
 # ============================================================
+# CARGA DE VARIABLES DE ENTORNO
+# ============================================================
+load_dotenv()
+
+# ============================================================
 # BLOQUE 2. CONFIGURACIÓN GENERAL DEL PROYECTO
 # ============================================================
 # Ruta raíz del proyecto.
@@ -99,10 +108,23 @@ LOGS_DIR = PROJECT_ROOT / "logs"
 LOG_FILE = LOGS_DIR / "monitor_api.log"
 
 # Información que se mostrará en las respuestas de la API.
-VERSION_MODELO = "modelo_churn_v1"
+VERSION_MODELO = os.getenv(
+    "MODEL_VERSION",
+    "modelo_churn_v1",
+)
 
 # Personalizar obligatoriamente con nombre y apellido.
-AUTOR = "Ivan Mamani Condori"
+AUTOR = os.getenv(
+    "API_AUTHOR",
+    "Ivan Mamani Condori",
+)
+
+DRIFT_THRESHOLD = float(
+    os.getenv(
+        "DRIFT_THRESHOLD",
+        "10",
+    )
+)
 
 # Ruta del archivo de metadatos del modelo.
 METADATA_PATH = (
@@ -644,7 +666,9 @@ def model_drift():
         else 0
     )
 
-    drift_detectado = porcentaje >= 10
+    drift_detectado = (
+        porcentaje >= DRIFT_THRESHOLD
+    )
 
     return {
         "drift_detectado": drift_detectado,
