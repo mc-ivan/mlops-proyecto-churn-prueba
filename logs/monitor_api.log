@@ -1856,3 +1856,19 @@
 2026-06-17 17:31:55,391 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=176.48 fuera del rango histórico [20.0, 150.0]', 'reclamos=9 fuera del rango histórico [0, 7]']
 2026-06-17 17:31:55,391 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9996 | alertas=2
 2026-06-17 17:31:55,392 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.079
+2026-06-17 17:39:54,946 | INFO | Modelo cargado correctamente: modelo_churn_v1
+2026-06-17 17:39:54,962 | INFO | Metadatos cargados correctamente
+2026-06-17 17:40:06,739 | INFO | Modelo cargado correctamente: modelo_churn_v1
+2026-06-17 17:40:06,755 | INFO | Metadatos cargados correctamente
+2026-06-17 17:40:21,536 | INFO | Modelo cargado correctamente: modelo_churn_v1
+2026-06-17 17:40:21,537 | INFO | Metadatos cargados correctamente
+2026-06-17 17:40:36,979 | INFO | Modelo cargado correctamente: modelo_churn_v1
+2026-06-17 17:40:36,995 | INFO | Metadatos cargados correctamente
+2026-06-17 17:42:09,249 | INFO | Modelo cargado correctamente: modelo_churn_v1
+2026-06-17 17:42:09,264 | INFO | Metadatos cargados correctamente
+2026-06-17 17:44:26,332 | INFO | Modelo cargado correctamente: modelo_churn_v1
+2026-06-17 17:44:26,353 | INFO | Metadatos cargados correctamente
+2026-06-17 17:46:06,686 | INFO | Modelo cargado correctamente: modelo_churn_v1
+2026-06-17 17:46:06,702 | INFO | Metadatos cargados correctamente
+2026-06-17 17:46:22,384 | INFO | Modelo cargado correctamente: modelo_churn_v1
+2026-06-17 17:46:22,385 | INFO | Metadatos cargados correctamente
