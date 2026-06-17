@@ -1899,3 +1899,6 @@
 2026-06-17 17:55:03,169 | INFO | Solicitud | metodo=GET | ruta=/model-metadata | estado=200 | latencia_ms=0.803
 2026-06-17 17:55:06,489 | INFO | Solicitud | metodo=GET | ruta=/model-metadata | estado=200 | latencia_ms=0.528
 2026-06-17 17:55:08,600 | INFO | Solicitud | metodo=GET | ruta=/model-metadata | estado=200 | latencia_ms=0.526
+2026-06-17 17:56:28,635 | INFO | Solicitud | metodo=GET | ruta=/info | estado=404 | latencia_ms=8.351
+2026-06-17 17:56:46,788 | INFO | Solicitud | metodo=GET | ruta=/docs | estado=200 | latencia_ms=4.176
+2026-06-17 17:56:47,343 | INFO | Solicitud | metodo=GET | ruta=/openapi.json | estado=200 | latencia_ms=304.573
