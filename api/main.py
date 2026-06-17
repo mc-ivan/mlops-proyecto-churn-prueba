@@ -40,6 +40,8 @@ import logging
 import joblib
 # joblib permite cargar el modelo serializado previamente.
 
+import json
+
 
 from fastapi import FastAPI, HTTPException, Request
 # FastAPI crea la aplicación.
@@ -101,6 +103,13 @@ VERSION_MODELO = "modelo_churn_v1"
 
 # Personalizar obligatoriamente con nombre y apellido.
 AUTOR = "Ivan Mamani Condori"
+
+# Ruta del archivo de metadatos del modelo.
+METADATA_PATH = (
+    PROJECT_ROOT
+    / "models"
+    / "modelo_churn_v1_metadata.json"
+)
 
 # ============================================================
 # BLOQUE 3. RANGOS HISTÓRICOS DE REFERENCIA
@@ -166,6 +175,26 @@ modelo = joblib.load(MODEL_PATH)
 
 # Registrar en consola y archivo que el modelo fue cargado.
 logger.info("Modelo cargado correctamente: %s", VERSION_MODELO)
+
+# ============================================================
+# CARGA DE METADATOS DEL MODELO
+# ============================================================
+try:
+    with open(
+        METADATA_PATH,
+        "r",
+        encoding="utf-8",
+    ) as archivo:
+        metadata_modelo = json.load(archivo)
+    logger.info(
+        "Metadatos cargados correctamente"
+    )
+
+except Exception:
+    logger.exception(
+        "No fue posible cargar los metadatos"
+    )
+    metadata_modelo = {}
 
 # ============================================================
 # BLOQUE 6. CONTADORES DE MÉTRICAS EN MEMORIA
@@ -513,6 +542,20 @@ def health() -> dict[str, str]:
         "modelo": VERSION_MODELO,
         "monitoreo": "activo",
     }
+
+# ============================================================
+# BLOQUE 15. ENDPOINT GET /model-metadata
+# ============================================================
+
+@app.get(
+    "/model-metadata",
+    tags=["Modelo"],
+)
+def model_metadata():
+    """
+    Devuelve los metadatos del modelo actualmente desplegado.
+    """
+    return metadata_modelo
 
 # ============================================================
 # BLOQUE 15. ENDPOINT GET /metrics
