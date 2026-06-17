@@ -1367,3 +1367,492 @@
 2026-06-17 17:25:06,640 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.516
 2026-06-17 17:25:08,343 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.510
 2026-06-17 17:25:09,506 | INFO | Solicitud | metodo=GET | ruta=/model-drift | estado=200 | latencia_ms=0.686
+2026-06-17 17:31:12,021 | INFO | Modelo cargado correctamente: modelo_churn_v1
+2026-06-17 17:31:12,040 | INFO | Metadatos cargados correctamente
+2026-06-17 17:31:15,534 | WARNING | Valores fuera de rango histórico: ['antiguedad=83 fuera del rango histórico [1, 72]']
+2026-06-17 17:31:15,534 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.4060 | alertas=1
+2026-06-17 17:31:15,535 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=26.421
+2026-06-17 17:31:15,615 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=212.46 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:15,615 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9718 | alertas=1
+2026-06-17 17:31:15,616 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.324
+2026-06-17 17:31:15,680 | WARNING | Valores fuera de rango histórico: ['antiguedad=119 fuera del rango histórico [1, 72]', 'cargo_mensual=246.23 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:15,680 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.8995 | alertas=2
+2026-06-17 17:31:15,680 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.697
+2026-06-17 17:31:15,798 | WARNING | Valores fuera de rango histórico: ['antiguedad=94 fuera del rango histórico [1, 72]', 'cargo_mensual=163.19 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:15,798 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9110 | alertas=2
+2026-06-17 17:31:15,798 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.857
+2026-06-17 17:31:15,967 | WARNING | Valores fuera de rango histórico: ['antiguedad=117 fuera del rango histórico [1, 72]', 'reclamos=9 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:15,967 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.8260 | alertas=2
+2026-06-17 17:31:15,968 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.732
+2026-06-17 17:31:16,170 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=158.16 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:16,170 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9933 | alertas=1
+2026-06-17 17:31:16,171 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.777
+2026-06-17 17:31:16,245 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=216.91 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:16,245 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9933 | alertas=1
+2026-06-17 17:31:16,245 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.633
+2026-06-17 17:31:16,312 | WARNING | Valores fuera de rango histórico: ['reclamos=9 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:16,312 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9899 | alertas=1
+2026-06-17 17:31:16,312 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.844
+2026-06-17 17:31:16,377 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=168.32 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:16,377 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.6675 | alertas=1
+2026-06-17 17:31:16,377 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.100
+2026-06-17 17:31:16,446 | WARNING | Valores fuera de rango histórico: ['antiguedad=84 fuera del rango histórico [1, 72]', 'cargo_mensual=204.05 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:16,446 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.7677 | alertas=2
+2026-06-17 17:31:16,447 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.732
+2026-06-17 17:31:16,509 | WARNING | Valores fuera de rango histórico: ['antiguedad=89 fuera del rango histórico [1, 72]', 'cargo_mensual=245.4 fuera del rango histórico [20.0, 150.0]', 'reclamos=9 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:16,509 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9987 | alertas=3
+2026-06-17 17:31:16,510 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.977
+2026-06-17 17:31:16,712 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.4116 | alertas=0
+2026-06-17 17:31:16,713 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.710
+2026-06-17 17:31:16,874 | WARNING | Valores fuera de rango histórico: ['antiguedad=77 fuera del rango histórico [1, 72]', 'cargo_mensual=176.92 fuera del rango histórico [20.0, 150.0]', 'reclamos=10 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:16,875 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9974 | alertas=3
+2026-06-17 17:31:16,875 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.132
+2026-06-17 17:31:17,064 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.3598 | alertas=0
+2026-06-17 17:31:17,065 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.799
+2026-06-17 17:31:17,165 | WARNING | Valores fuera de rango histórico: ['antiguedad=107 fuera del rango histórico [1, 72]']
+2026-06-17 17:31:17,165 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.3008 | alertas=1
+2026-06-17 17:31:17,166 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.156
+2026-06-17 17:31:17,237 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=239.47 fuera del rango histórico [20.0, 150.0]', 'reclamos=9 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:17,237 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9996 | alertas=2
+2026-06-17 17:31:17,237 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.930
+2026-06-17 17:31:17,398 | WARNING | Valores fuera de rango histórico: ['antiguedad=106 fuera del rango histórico [1, 72]', 'reclamos=9 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:17,398 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.6862 | alertas=2
+2026-06-17 17:31:17,398 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.895
+2026-06-17 17:31:17,546 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=158.78 fuera del rango histórico [20.0, 150.0]', 'reclamos=9 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:17,546 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9962 | alertas=2
+2026-06-17 17:31:17,547 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.752
+2026-06-17 17:31:17,751 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=186.48 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:17,751 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.6658 | alertas=1
+2026-06-17 17:31:17,752 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.931
+2026-06-17 17:31:17,884 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=180.14 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:17,884 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.8951 | alertas=1
+2026-06-17 17:31:17,885 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.791
+2026-06-17 17:31:17,998 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=232.74 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:17,999 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9494 | alertas=1
+2026-06-17 17:31:17,999 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.251
+2026-06-17 17:31:18,195 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=171.3 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:18,195 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.7984 | alertas=1
+2026-06-17 17:31:18,196 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=33.274
+2026-06-17 17:31:18,343 | WARNING | Valores fuera de rango histórico: ['antiguedad=106 fuera del rango histórico [1, 72]']
+2026-06-17 17:31:18,343 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.1657 | alertas=1
+2026-06-17 17:31:18,343 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.983
+2026-06-17 17:31:18,482 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=224.26 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:18,482 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9793 | alertas=1
+2026-06-17 17:31:18,483 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.753
+2026-06-17 17:31:18,612 | WARNING | Valores fuera de rango histórico: ['antiguedad=88 fuera del rango histórico [1, 72]']
+2026-06-17 17:31:18,612 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.0178 | alertas=1
+2026-06-17 17:31:18,612 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.911
+2026-06-17 17:31:18,747 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=222.17 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:18,747 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9992 | alertas=1
+2026-06-17 17:31:18,748 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.701
+2026-06-17 17:31:18,898 | WARNING | Valores fuera de rango histórico: ['antiguedad=99 fuera del rango histórico [1, 72]']
+2026-06-17 17:31:18,898 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.4796 | alertas=1
+2026-06-17 17:31:18,899 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.018
+2026-06-17 17:31:19,045 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=193.1 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:19,045 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.7114 | alertas=1
+2026-06-17 17:31:19,046 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.225
+2026-06-17 17:31:19,154 | WARNING | Valores fuera de rango histórico: ['antiguedad=87 fuera del rango histórico [1, 72]', 'cargo_mensual=168.61 fuera del rango histórico [20.0, 150.0]', 'reclamos=8 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:19,154 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9828 | alertas=3
+2026-06-17 17:31:19,155 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.061
+2026-06-17 17:31:19,297 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.0338 | alertas=0
+2026-06-17 17:31:19,298 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.588
+2026-06-17 17:31:19,410 | WARNING | Valores fuera de rango histórico: ['antiguedad=73 fuera del rango histórico [1, 72]', 'cargo_mensual=170.23 fuera del rango histórico [20.0, 150.0]', 'reclamos=10 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:19,410 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9974 | alertas=3
+2026-06-17 17:31:19,411 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.993
+2026-06-17 17:31:19,506 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.0502 | alertas=0
+2026-06-17 17:31:19,506 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.801
+2026-06-17 17:31:19,682 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9236 | alertas=0
+2026-06-17 17:31:19,683 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.808
+2026-06-17 17:31:19,823 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=176.92 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:19,823 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.8380 | alertas=1
+2026-06-17 17:31:19,824 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.910
+2026-06-17 17:31:19,909 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.2181 | alertas=0
+2026-06-17 17:31:19,910 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.852
+2026-06-17 17:31:20,060 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=162.05 fuera del rango histórico [20.0, 150.0]', 'reclamos=8 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:20,060 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9962 | alertas=2
+2026-06-17 17:31:20,061 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.073
+2026-06-17 17:31:20,263 | WARNING | Valores fuera de rango histórico: ['antiguedad=116 fuera del rango histórico [1, 72]', 'reclamos=8 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:20,264 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.8704 | alertas=2
+2026-06-17 17:31:20,264 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.020
+2026-06-17 17:31:20,387 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=199.58 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:20,387 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9940 | alertas=1
+2026-06-17 17:31:20,388 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.889
+2026-06-17 17:31:20,575 | WARNING | Valores fuera de rango histórico: ['antiguedad=89 fuera del rango histórico [1, 72]', 'reclamos=10 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:20,575 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9593 | alertas=2
+2026-06-17 17:31:20,575 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.995
+2026-06-17 17:31:20,758 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.5968 | alertas=0
+2026-06-17 17:31:20,759 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.817
+2026-06-17 17:31:20,847 | WARNING | Valores fuera de rango histórico: ['antiguedad=117 fuera del rango histórico [1, 72]', 'cargo_mensual=162.26 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:20,847 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.5200 | alertas=2
+2026-06-17 17:31:20,848 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.712
+2026-06-17 17:31:20,911 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=150.73 fuera del rango histórico [20.0, 150.0]', 'reclamos=8 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:20,911 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9956 | alertas=2
+2026-06-17 17:31:20,912 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.209
+2026-06-17 17:31:21,023 | WARNING | Valores fuera de rango histórico: ['antiguedad=114 fuera del rango histórico [1, 72]', 'cargo_mensual=243.27 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:21,023 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9861 | alertas=2
+2026-06-17 17:31:21,023 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.935
+2026-06-17 17:31:21,199 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=224.47 fuera del rango histórico [20.0, 150.0]', 'reclamos=8 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:21,199 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9998 | alertas=2
+2026-06-17 17:31:21,200 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.885
+2026-06-17 17:31:21,379 | WARNING | Valores fuera de rango histórico: ['antiguedad=83 fuera del rango histórico [1, 72]', 'cargo_mensual=170.68 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:21,379 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.2820 | alertas=2
+2026-06-17 17:31:21,379 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.900
+2026-06-17 17:31:21,522 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9900 | alertas=0
+2026-06-17 17:31:21,523 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.895
+2026-06-17 17:31:21,679 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=196.44 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:21,679 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9946 | alertas=1
+2026-06-17 17:31:21,679 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.991
+2026-06-17 17:31:21,845 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9349 | alertas=0
+2026-06-17 17:31:21,846 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.799
+2026-06-17 17:31:21,954 | WARNING | Valores fuera de rango histórico: ['antiguedad=78 fuera del rango histórico [1, 72]']
+2026-06-17 17:31:21,954 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.1134 | alertas=1
+2026-06-17 17:31:21,954 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.867
+2026-06-17 17:31:22,098 | WARNING | Valores fuera de rango histórico: ['antiguedad=102 fuera del rango histórico [1, 72]']
+2026-06-17 17:31:22,098 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.0445 | alertas=1
+2026-06-17 17:31:22,098 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.919
+2026-06-17 17:31:22,277 | WARNING | Valores fuera de rango histórico: ['antiguedad=87 fuera del rango histórico [1, 72]']
+2026-06-17 17:31:22,277 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.3474 | alertas=1
+2026-06-17 17:31:22,278 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.114
+2026-06-17 17:31:22,479 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=212.86 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:22,480 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9952 | alertas=1
+2026-06-17 17:31:22,480 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.871
+2026-06-17 17:31:22,680 | WARNING | Valores fuera de rango histórico: ['antiguedad=102 fuera del rango histórico [1, 72]', 'cargo_mensual=161.92 fuera del rango histórico [20.0, 150.0]', 'reclamos=10 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:22,680 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9898 | alertas=3
+2026-06-17 17:31:22,681 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.786
+2026-06-17 17:31:22,804 | WARNING | Valores fuera de rango histórico: ['antiguedad=120 fuera del rango histórico [1, 72]']
+2026-06-17 17:31:22,804 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.0247 | alertas=1
+2026-06-17 17:31:22,805 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.835
+2026-06-17 17:31:22,939 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.5125 | alertas=0
+2026-06-17 17:31:22,939 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.738
+2026-06-17 17:31:23,015 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=188.68 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:23,015 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9916 | alertas=1
+2026-06-17 17:31:23,015 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.709
+2026-06-17 17:31:23,079 | WARNING | Valores fuera de rango histórico: ['antiguedad=115 fuera del rango histórico [1, 72]', 'cargo_mensual=234.14 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:23,079 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9362 | alertas=2
+2026-06-17 17:31:23,079 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.019
+2026-06-17 17:31:23,266 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=222.45 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:23,266 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9800 | alertas=1
+2026-06-17 17:31:23,267 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.144
+2026-06-17 17:31:23,374 | WARNING | Valores fuera de rango histórico: ['antiguedad=90 fuera del rango histórico [1, 72]']
+2026-06-17 17:31:23,374 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.5409 | alertas=1
+2026-06-17 17:31:23,375 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.973
+2026-06-17 17:31:23,561 | WARNING | Valores fuera de rango histórico: ['antiguedad=113 fuera del rango histórico [1, 72]']
+2026-06-17 17:31:23,561 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.0091 | alertas=1
+2026-06-17 17:31:23,561 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.925
+2026-06-17 17:31:23,646 | WARNING | Valores fuera de rango histórico: ['antiguedad=81 fuera del rango histórico [1, 72]', 'cargo_mensual=172.34 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:23,646 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9563 | alertas=2
+2026-06-17 17:31:23,647 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.906
+2026-06-17 17:31:23,729 | WARNING | Valores fuera de rango histórico: ['antiguedad=91 fuera del rango histórico [1, 72]', 'reclamos=8 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:23,729 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9584 | alertas=2
+2026-06-17 17:31:23,730 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.044
+2026-06-17 17:31:23,920 | WARNING | Valores fuera de rango histórico: ['antiguedad=88 fuera del rango histórico [1, 72]']
+2026-06-17 17:31:23,920 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.6817 | alertas=1
+2026-06-17 17:31:23,921 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.872
+2026-06-17 17:31:24,080 | WARNING | Valores fuera de rango histórico: ['antiguedad=76 fuera del rango histórico [1, 72]', 'cargo_mensual=160.79 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:24,081 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9519 | alertas=2
+2026-06-17 17:31:24,081 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.787
+2026-06-17 17:31:24,188 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=176.25 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:24,188 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9653 | alertas=1
+2026-06-17 17:31:24,189 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.863
+2026-06-17 17:31:24,362 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=235.63 fuera del rango histórico [20.0, 150.0]', 'reclamos=10 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:24,362 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9999 | alertas=2
+2026-06-17 17:31:24,363 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.933
+2026-06-17 17:31:24,437 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=204.12 fuera del rango histórico [20.0, 150.0]', 'reclamos=8 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:24,438 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9995 | alertas=2
+2026-06-17 17:31:24,438 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.915
+2026-06-17 17:31:24,533 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.8798 | alertas=0
+2026-06-17 17:31:24,534 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.965
+2026-06-17 17:31:24,700 | WARNING | Valores fuera de rango histórico: ['antiguedad=102 fuera del rango histórico [1, 72]', 'cargo_mensual=177.04 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:24,700 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.2929 | alertas=2
+2026-06-17 17:31:24,700 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.992
+2026-06-17 17:31:24,769 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.1625 | alertas=0
+2026-06-17 17:31:24,770 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.708
+2026-06-17 17:31:24,880 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=235.22 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:24,880 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9961 | alertas=1
+2026-06-17 17:31:24,880 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.888
+2026-06-17 17:31:25,082 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9923 | alertas=0
+2026-06-17 17:31:25,082 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.665
+2026-06-17 17:31:25,233 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=157.83 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:25,233 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.7757 | alertas=1
+2026-06-17 17:31:25,234 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.866
+2026-06-17 17:31:25,374 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.2088 | alertas=0
+2026-06-17 17:31:25,375 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.850
+2026-06-17 17:31:25,537 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.0397 | alertas=0
+2026-06-17 17:31:25,538 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.687
+2026-06-17 17:31:25,696 | WARNING | Valores fuera de rango histórico: ['reclamos=8 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:25,696 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9760 | alertas=1
+2026-06-17 17:31:25,697 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.905
+2026-06-17 17:31:25,792 | WARNING | Valores fuera de rango histórico: ['antiguedad=92 fuera del rango histórico [1, 72]', 'reclamos=8 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:25,792 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.5325 | alertas=2
+2026-06-17 17:31:25,793 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.228
+2026-06-17 17:31:25,879 | WARNING | Valores fuera de rango histórico: ['antiguedad=106 fuera del rango histórico [1, 72]', 'reclamos=10 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:25,879 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9326 | alertas=2
+2026-06-17 17:31:25,880 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.045
+2026-06-17 17:31:26,034 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9735 | alertas=0
+2026-06-17 17:31:26,034 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.800
+2026-06-17 17:31:26,100 | WARNING | Valores fuera de rango histórico: ['antiguedad=93 fuera del rango histórico [1, 72]', 'cargo_mensual=239.23 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:26,100 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.8523 | alertas=2
+2026-06-17 17:31:26,101 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.931
+2026-06-17 17:31:26,187 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=240.48 fuera del rango histórico [20.0, 150.0]', 'reclamos=8 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:26,187 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9998 | alertas=2
+2026-06-17 17:31:26,188 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.964
+2026-06-17 17:31:26,367 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.8799 | alertas=0
+2026-06-17 17:31:26,368 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.875
+2026-06-17 17:31:26,449 | WARNING | Valores fuera de rango histórico: ['reclamos=10 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:26,449 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9959 | alertas=1
+2026-06-17 17:31:26,449 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.729
+2026-06-17 17:31:26,546 | WARNING | Valores fuera de rango histórico: ['antiguedad=94 fuera del rango histórico [1, 72]', 'cargo_mensual=220.9 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:26,547 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.7746 | alertas=2
+2026-06-17 17:31:26,547 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.966
+2026-06-17 17:31:26,606 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=234.01 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:26,606 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9987 | alertas=1
+2026-06-17 17:31:26,607 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.770
+2026-06-17 17:31:26,746 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=243.58 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:26,747 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9499 | alertas=1
+2026-06-17 17:31:26,747 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.884
+2026-06-17 17:31:26,915 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9145 | alertas=0
+2026-06-17 17:31:26,916 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.671
+2026-06-17 17:31:27,124 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=157.61 fuera del rango histórico [20.0, 150.0]', 'reclamos=8 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:27,124 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9919 | alertas=2
+2026-06-17 17:31:27,125 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.894
+2026-06-17 17:31:27,219 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=232.94 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:27,219 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9818 | alertas=1
+2026-06-17 17:31:27,220 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.898
+2026-06-17 17:31:27,355 | WARNING | Valores fuera de rango histórico: ['antiguedad=81 fuera del rango histórico [1, 72]']
+2026-06-17 17:31:27,355 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.1019 | alertas=1
+2026-06-17 17:31:27,356 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.876
+2026-06-17 17:31:27,534 | WARNING | Valores fuera de rango histórico: ['antiguedad=77 fuera del rango histórico [1, 72]']
+2026-06-17 17:31:27,534 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.0765 | alertas=1
+2026-06-17 17:31:27,534 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.894
+2026-06-17 17:31:27,727 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=234.62 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:27,727 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9964 | alertas=1
+2026-06-17 17:31:27,727 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.088
+2026-06-17 17:31:27,905 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.0298 | alertas=0
+2026-06-17 17:31:27,906 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.854
+2026-06-17 17:31:28,016 | WARNING | Valores fuera de rango histórico: ['antiguedad=96 fuera del rango histórico [1, 72]']
+2026-06-17 17:31:28,016 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.0549 | alertas=1
+2026-06-17 17:31:28,016 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.825
+2026-06-17 17:31:28,127 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9074 | alertas=0
+2026-06-17 17:31:28,128 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.771
+2026-06-17 17:31:28,273 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=175.81 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:28,273 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9881 | alertas=1
+2026-06-17 17:31:28,274 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.889
+2026-06-17 17:31:28,383 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=203.53 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:28,383 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9735 | alertas=1
+2026-06-17 17:31:28,383 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.718
+2026-06-17 17:31:28,444 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=207.19 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:28,445 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9986 | alertas=1
+2026-06-17 17:31:28,445 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.004
+2026-06-17 17:31:28,630 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=232.52 fuera del rango histórico [20.0, 150.0]', 'reclamos=9 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:28,630 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9999 | alertas=2
+2026-06-17 17:31:28,631 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.091
+2026-06-17 17:31:28,730 | WARNING | Valores fuera de rango histórico: ['antiguedad=84 fuera del rango histórico [1, 72]']
+2026-06-17 17:31:28,730 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.0100 | alertas=1
+2026-06-17 17:31:28,731 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.944
+2026-06-17 17:31:45,551 | INFO | Modelo cargado correctamente: modelo_churn_v1
+2026-06-17 17:31:45,551 | INFO | Metadatos cargados correctamente
+2026-06-17 17:31:45,726 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9525 | alertas=0
+2026-06-17 17:31:45,726 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=6.220
+2026-06-17 17:31:45,892 | WARNING | Valores fuera de rango histórico: ['reclamos=10 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:45,893 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9990 | alertas=1
+2026-06-17 17:31:45,893 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.958
+2026-06-17 17:31:46,015 | WARNING | Valores fuera de rango histórico: ['reclamos=9 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:46,015 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9859 | alertas=1
+2026-06-17 17:31:46,015 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.887
+2026-06-17 17:31:46,116 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=248.07 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:46,117 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9915 | alertas=1
+2026-06-17 17:31:46,117 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.887
+2026-06-17 17:31:46,280 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=237.45 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:46,280 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9940 | alertas=1
+2026-06-17 17:31:46,281 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.337
+2026-06-17 17:31:46,482 | WARNING | Valores fuera de rango histórico: ['reclamos=10 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:46,482 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9954 | alertas=1
+2026-06-17 17:31:46,483 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.126
+2026-06-17 17:31:46,638 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9865 | alertas=0
+2026-06-17 17:31:46,638 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.386
+2026-06-17 17:31:46,767 | WARNING | Valores fuera de rango histórico: ['reclamos=8 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:46,767 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9692 | alertas=1
+2026-06-17 17:31:46,767 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.956
+2026-06-17 17:31:46,923 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=226.82 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:46,923 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9971 | alertas=1
+2026-06-17 17:31:46,924 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.983
+2026-06-17 17:31:47,001 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=216.91 fuera del rango histórico [20.0, 150.0]', 'reclamos=8 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:47,001 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9998 | alertas=2
+2026-06-17 17:31:47,001 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.876
+2026-06-17 17:31:47,072 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=199.6 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:47,072 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9953 | alertas=1
+2026-06-17 17:31:47,072 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.691
+2026-06-17 17:31:47,156 | WARNING | Valores fuera de rango histórico: ['antiguedad=100 fuera del rango histórico [1, 72]', 'cargo_mensual=161.18 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:47,156 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.3623 | alertas=2
+2026-06-17 17:31:47,157 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.613
+2026-06-17 17:31:47,279 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=232.92 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:47,279 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9768 | alertas=1
+2026-06-17 17:31:47,280 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.882
+2026-06-17 17:31:47,341 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9468 | alertas=0
+2026-06-17 17:31:47,342 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.737
+2026-06-17 17:31:47,451 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=218.61 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:47,452 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9721 | alertas=1
+2026-06-17 17:31:47,452 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.922
+2026-06-17 17:31:47,583 | WARNING | Valores fuera de rango histórico: ['antiguedad=120 fuera del rango histórico [1, 72]']
+2026-06-17 17:31:47,584 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.0970 | alertas=1
+2026-06-17 17:31:47,584 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.927
+2026-06-17 17:31:47,702 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.5988 | alertas=0
+2026-06-17 17:31:47,703 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.787
+2026-06-17 17:31:47,773 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=197.39 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:47,773 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9899 | alertas=1
+2026-06-17 17:31:47,773 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.752
+2026-06-17 17:31:47,956 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.6201 | alertas=0
+2026-06-17 17:31:47,957 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.975
+2026-06-17 17:31:48,089 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.7393 | alertas=0
+2026-06-17 17:31:48,090 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.787
+2026-06-17 17:31:48,188 | WARNING | Valores fuera de rango histórico: ['antiguedad=93 fuera del rango histórico [1, 72]', 'reclamos=8 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:48,188 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.8252 | alertas=2
+2026-06-17 17:31:48,188 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.819
+2026-06-17 17:31:48,289 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9214 | alertas=0
+2026-06-17 17:31:48,289 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=36.083
+2026-06-17 17:31:48,480 | WARNING | Valores fuera de rango histórico: ['antiguedad=110 fuera del rango histórico [1, 72]']
+2026-06-17 17:31:48,480 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.0730 | alertas=1
+2026-06-17 17:31:48,481 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.934
+2026-06-17 17:31:48,642 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9509 | alertas=0
+2026-06-17 17:31:48,642 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.674
+2026-06-17 17:31:48,770 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.7623 | alertas=0
+2026-06-17 17:31:48,770 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.691
+2026-06-17 17:31:48,946 | WARNING | Valores fuera de rango histórico: ['reclamos=9 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:48,946 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9955 | alertas=1
+2026-06-17 17:31:48,947 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.929
+2026-06-17 17:31:49,132 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.8877 | alertas=0
+2026-06-17 17:31:49,132 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.886
+2026-06-17 17:31:49,326 | WARNING | Valores fuera de rango histórico: ['antiguedad=109 fuera del rango histórico [1, 72]']
+2026-06-17 17:31:49,326 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.0526 | alertas=1
+2026-06-17 17:31:49,326 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.687
+2026-06-17 17:31:49,511 | WARNING | Valores fuera de rango histórico: ['reclamos=8 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:49,511 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9970 | alertas=1
+2026-06-17 17:31:49,511 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.020
+2026-06-17 17:31:49,709 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=204.92 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:49,709 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9826 | alertas=1
+2026-06-17 17:31:49,710 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.892
+2026-06-17 17:31:49,852 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=208.77 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:49,853 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9994 | alertas=1
+2026-06-17 17:31:49,853 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.915
+2026-06-17 17:31:49,932 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=168.54 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:49,932 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9857 | alertas=1
+2026-06-17 17:31:49,933 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.139
+2026-06-17 17:31:50,082 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=153.63 fuera del rango histórico [20.0, 150.0]', 'reclamos=10 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:50,082 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9987 | alertas=2
+2026-06-17 17:31:50,082 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.287
+2026-06-17 17:31:50,169 | WARNING | Valores fuera de rango histórico: ['antiguedad=92 fuera del rango histórico [1, 72]', 'cargo_mensual=203.07 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:50,169 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.5497 | alertas=2
+2026-06-17 17:31:50,170 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.911
+2026-06-17 17:31:50,255 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.4278 | alertas=0
+2026-06-17 17:31:50,256 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.864
+2026-06-17 17:31:50,383 | WARNING | Valores fuera de rango histórico: ['antiguedad=113 fuera del rango histórico [1, 72]']
+2026-06-17 17:31:50,383 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.0098 | alertas=1
+2026-06-17 17:31:50,383 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.914
+2026-06-17 17:31:50,540 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.1994 | alertas=0
+2026-06-17 17:31:50,540 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.588
+2026-06-17 17:31:50,636 | WARNING | Valores fuera de rango histórico: ['reclamos=8 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:50,636 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9815 | alertas=1
+2026-06-17 17:31:50,637 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.828
+2026-06-17 17:31:50,803 | WARNING | Valores fuera de rango histórico: ['antiguedad=105 fuera del rango histórico [1, 72]', 'cargo_mensual=176.66 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:50,803 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9472 | alertas=2
+2026-06-17 17:31:50,803 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.898
+2026-06-17 17:31:50,937 | WARNING | Valores fuera de rango histórico: ['antiguedad=116 fuera del rango histórico [1, 72]', 'cargo_mensual=166.4 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:50,937 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.8982 | alertas=2
+2026-06-17 17:31:50,938 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.889
+2026-06-17 17:31:51,101 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.1370 | alertas=0
+2026-06-17 17:31:51,101 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.897
+2026-06-17 17:31:51,171 | WARNING | Valores fuera de rango histórico: ['antiguedad=80 fuera del rango histórico [1, 72]', 'cargo_mensual=179.07 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:51,171 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9811 | alertas=2
+2026-06-17 17:31:51,171 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.687
+2026-06-17 17:31:51,374 | WARNING | Valores fuera de rango histórico: ['antiguedad=117 fuera del rango histórico [1, 72]']
+2026-06-17 17:31:51,374 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.0053 | alertas=1
+2026-06-17 17:31:51,374 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.679
+2026-06-17 17:31:51,536 | WARNING | Valores fuera de rango histórico: ['reclamos=8 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:51,536 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9892 | alertas=1
+2026-06-17 17:31:51,536 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.031
+2026-06-17 17:31:51,649 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.6210 | alertas=0
+2026-06-17 17:31:51,650 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.736
+2026-06-17 17:31:51,743 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.5966 | alertas=0
+2026-06-17 17:31:51,744 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.617
+2026-06-17 17:31:51,831 | WARNING | Valores fuera de rango histórico: ['antiguedad=99 fuera del rango histórico [1, 72]']
+2026-06-17 17:31:51,831 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.1198 | alertas=1
+2026-06-17 17:31:51,831 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.014
+2026-06-17 17:31:51,936 | WARNING | Valores fuera de rango histórico: ['reclamos=10 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:51,936 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9794 | alertas=1
+2026-06-17 17:31:51,937 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.836
+2026-06-17 17:31:52,023 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.6625 | alertas=0
+2026-06-17 17:31:52,024 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.802
+2026-06-17 17:31:52,103 | WARNING | Valores fuera de rango histórico: ['reclamos=9 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:52,103 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9948 | alertas=1
+2026-06-17 17:31:52,103 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.800
+2026-06-17 17:31:52,232 | WARNING | Valores fuera de rango histórico: ['antiguedad=78 fuera del rango histórico [1, 72]', 'reclamos=9 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:52,232 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9825 | alertas=2
+2026-06-17 17:31:52,233 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.955
+2026-06-17 17:31:52,362 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.8086 | alertas=0
+2026-06-17 17:31:52,362 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.832
+2026-06-17 17:31:52,436 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=160.95 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:52,436 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9984 | alertas=1
+2026-06-17 17:31:52,437 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.992
+2026-06-17 17:31:52,508 | WARNING | Valores fuera de rango histórico: ['antiguedad=78 fuera del rango histórico [1, 72]']
+2026-06-17 17:31:52,508 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.2842 | alertas=1
+2026-06-17 17:31:52,508 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.758
+2026-06-17 17:31:52,566 | WARNING | Valores fuera de rango histórico: ['antiguedad=108 fuera del rango histórico [1, 72]', 'cargo_mensual=218.93 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:52,566 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.6505 | alertas=2
+2026-06-17 17:31:52,566 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.944
+2026-06-17 17:31:52,761 | WARNING | Valores fuera de rango histórico: ['antiguedad=116 fuera del rango histórico [1, 72]']
+2026-06-17 17:31:52,761 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.7328 | alertas=1
+2026-06-17 17:31:52,762 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.663
+2026-06-17 17:31:52,934 | WARNING | Valores fuera de rango histórico: ['antiguedad=86 fuera del rango histórico [1, 72]', 'cargo_mensual=219.26 fuera del rango histórico [20.0, 150.0]', 'reclamos=9 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:52,934 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9977 | alertas=3
+2026-06-17 17:31:52,935 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.003
+2026-06-17 17:31:53,118 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=230.47 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:53,118 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9995 | alertas=1
+2026-06-17 17:31:53,118 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.930
+2026-06-17 17:31:53,257 | WARNING | Valores fuera de rango histórico: ['reclamos=10 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:53,257 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9993 | alertas=1
+2026-06-17 17:31:53,258 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.855
+2026-06-17 17:31:53,452 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.3635 | alertas=0
+2026-06-17 17:31:53,453 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.840
+2026-06-17 17:31:53,537 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=198.5 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:53,537 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9185 | alertas=1
+2026-06-17 17:31:53,538 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.797
+2026-06-17 17:31:53,741 | WARNING | Valores fuera de rango histórico: ['reclamos=10 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:53,741 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9927 | alertas=1
+2026-06-17 17:31:53,741 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.871
+2026-06-17 17:31:53,801 | WARNING | Valores fuera de rango histórico: ['antiguedad=109 fuera del rango histórico [1, 72]', 'cargo_mensual=205.23 fuera del rango histórico [20.0, 150.0]', 'reclamos=10 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:53,801 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9956 | alertas=3
+2026-06-17 17:31:53,802 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.142
+2026-06-17 17:31:53,865 | WARNING | Valores fuera de rango histórico: ['antiguedad=104 fuera del rango histórico [1, 72]', 'cargo_mensual=207.15 fuera del rango histórico [20.0, 150.0]', 'reclamos=9 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:53,865 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9934 | alertas=3
+2026-06-17 17:31:53,866 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.955
+2026-06-17 17:31:54,060 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=210.74 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:54,060 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9136 | alertas=1
+2026-06-17 17:31:54,061 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.889
+2026-06-17 17:31:54,152 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=238.54 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:54,152 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9993 | alertas=1
+2026-06-17 17:31:54,152 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.865
+2026-06-17 17:31:54,324 | WARNING | Valores fuera de rango histórico: ['antiguedad=83 fuera del rango histórico [1, 72]']
+2026-06-17 17:31:54,324 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.5304 | alertas=1
+2026-06-17 17:31:54,325 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.093
+2026-06-17 17:31:54,485 | WARNING | Valores fuera de rango histórico: ['antiguedad=91 fuera del rango histórico [1, 72]']
+2026-06-17 17:31:54,485 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.0115 | alertas=1
+2026-06-17 17:31:54,486 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.934
+2026-06-17 17:31:54,582 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9174 | alertas=0
+2026-06-17 17:31:54,583 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.835
+2026-06-17 17:31:54,751 | WARNING | Valores fuera de rango histórico: ['antiguedad=119 fuera del rango histórico [1, 72]', 'cargo_mensual=240.85 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:54,751 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.3665 | alertas=2
+2026-06-17 17:31:54,752 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.996
+2026-06-17 17:31:54,833 | INFO | Predicción | resultado=bajo_riesgo | probabilidad=0.0124 | alertas=0
+2026-06-17 17:31:54,834 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.891
+2026-06-17 17:31:55,017 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=208.29 fuera del rango histórico [20.0, 150.0]']
+2026-06-17 17:31:55,017 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9909 | alertas=1
+2026-06-17 17:31:55,017 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.899
+2026-06-17 17:31:55,157 | WARNING | Valores fuera de rango histórico: ['antiguedad=80 fuera del rango histórico [1, 72]', 'cargo_mensual=194.34 fuera del rango histórico [20.0, 150.0]', 'reclamos=10 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:55,157 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9982 | alertas=3
+2026-06-17 17:31:55,157 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.961
+2026-06-17 17:31:55,276 | WARNING | Valores fuera de rango histórico: ['reclamos=10 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:55,276 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9763 | alertas=1
+2026-06-17 17:31:55,276 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=1.749
+2026-06-17 17:31:55,391 | WARNING | Valores fuera de rango histórico: ['cargo_mensual=176.48 fuera del rango histórico [20.0, 150.0]', 'reclamos=9 fuera del rango histórico [0, 7]']
+2026-06-17 17:31:55,391 | INFO | Predicción | resultado=alto_riesgo | probabilidad=0.9996 | alertas=2
+2026-06-17 17:31:55,392 | INFO | Solicitud | metodo=POST | ruta=/predict | estado=200 | latencia_ms=2.079
