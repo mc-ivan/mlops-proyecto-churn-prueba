@@ -1,0 +1,11 @@
+global:
+  scrape_interval: 5s # Prometheus consulta métricas cada 5 seg
+
+scrape_configs:
+  - job_name: "churn-api"
+
+    metrics_path: /prometheus # Le indica que las métricas están en http://api:8000/prometheus
+
+    static_configs:
+      - targets:
+          - api:8000 # Utiliza el nombre del servicio Docker Compose

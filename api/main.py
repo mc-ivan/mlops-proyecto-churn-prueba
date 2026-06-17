@@ -40,6 +40,12 @@ import logging
 import joblib
 # joblib permite cargar el modelo serializado previamente.
 
+import json
+
+import os
+
+from dotenv import load_dotenv
+
 
 from fastapi import FastAPI, HTTPException, Request
 # FastAPI crea la aplicación.
@@ -59,6 +65,31 @@ from pydantic import BaseModel, Field
 # BaseModel define la estructura esperada de los datos.
 # Field agrega reglas de validación.
 
+from prometheus_client import Counter as PromCounter
+# Define métricas de tipo contador para registrar eventos acumulativos,
+# como cantidad de solicitudes, errores o predicciones realizadas.
+
+from prometheus_client import Histogram as PromHistogram
+# Define métricas de tipo histograma para medir distribuciones,
+# como tiempos de respuesta o duración de operaciones.
+
+from prometheus_client import generate_latest
+# Genera la representación de todas las métricas registradas
+# en el formato de texto que Prometheus puede consumir.
+
+from prometheus_client import CONTENT_TYPE_LATEST
+# Define el Content-Type oficial utilizado por Prometheus
+# para exponer métricas a través de un endpoint HTTP.
+
+from fastapi.responses import Response
+# Permite construir respuestas HTTP personalizadas,
+# incluyendo el contenido y encabezados necesarios para el endpoint de métricas.
+
+# ============================================================
+# CARGA DE VARIABLES DE ENTORNO
+# ============================================================
+load_dotenv()
+
 # ============================================================
 # BLOQUE 2. CONFIGURACIÓN GENERAL DEL PROYECTO
 # ============================================================
@@ -77,10 +108,30 @@ LOGS_DIR = PROJECT_ROOT / "logs"
 LOG_FILE = LOGS_DIR / "monitor_api.log"
 
 # Información que se mostrará en las respuestas de la API.
-VERSION_MODELO = "modelo_churn_v1"
+VERSION_MODELO = os.getenv(
+    "MODEL_VERSION",
+    "modelo_churn_v1",
+)
 
 # Personalizar obligatoriamente con nombre y apellido.
-AUTOR = "Ivan Mamani Condori"
+AUTOR = os.getenv(
+    "API_AUTHOR",
+    "Ivan Mamani Condori",
+)
+
+DRIFT_THRESHOLD = float(
+    os.getenv(
+        "DRIFT_THRESHOLD",
+        "10",
+    )
+)
+
+# Ruta del archivo de metadatos del modelo.
+METADATA_PATH = (
+    PROJECT_ROOT
+    / "models"
+    / "modelo_churn_v1_metadata.json"
+)
 
 # ============================================================
 # BLOQUE 3. RANGOS HISTÓRICOS DE REFERENCIA
@@ -148,6 +199,26 @@ modelo = joblib.load(MODEL_PATH)
 logger.info("Modelo cargado correctamente: %s", VERSION_MODELO)
 
 # ============================================================
+# CARGA DE METADATOS DEL MODELO
+# ============================================================
+try:
+    with open(
+        METADATA_PATH,
+        "r",
+        encoding="utf-8",
+    ) as archivo:
+        metadata_modelo = json.load(archivo)
+    logger.info(
+        "Metadatos cargados correctamente"
+    )
+
+except Exception:
+    logger.exception(
+        "No fue posible cargar los metadatos"
+    )
+    metadata_modelo = {}
+
+# ============================================================
 # BLOQUE 6. CONTADORES DE MÉTRICAS EN MEMORIA
 # ============================================================
 # AQUÍ SE PREPARA EL CONTEO DE:
@@ -178,6 +249,43 @@ metricas = {
 # Lock evita que dos solicitudes modifiquen simultáneamente
 # los mismos contadores.
 metricas_lock = Lock()
+
+# ============================================================
+# MÉTRICAS PROMETHEUS
+# ============================================================
+
+#
+# Estas métricas permiten integrar la API con Prometheus.
+#
+# No reemplazan el endpoint /metrics.
+# Ambas soluciones coexistirán.
+#
+REQUESTS_TOTAL = PromCounter(
+    "api_requests_total",
+    "Cantidad total de solicitudes procesadas",
+)
+
+HTTP_RESPONSES_TOTAL = PromCounter(
+    "api_http_responses_total",
+    "Cantidad de respuestas HTTP",
+    ["status_code"],
+)
+
+REQUEST_LATENCY_SECONDS = PromHistogram(
+    "api_request_latency_seconds",
+    "Latencia observada en segundos",
+)
+
+PREDICCIONES_TOTAL = PromCounter(
+    "api_predictions_total",
+    "Cantidad de predicciones realizadas",
+    ["resultado"],
+)
+
+ANOMALIAS_TOTAL = PromCounter(
+    "api_anomalies_total",
+    "Cantidad de solicitudes con valores fuera del rango historico",
+)
 
 # ============================================================
 # BLOQUE 7. MODELOS DE DATOS Y VALIDACIÓN DE ENTRADAS
@@ -370,6 +478,17 @@ async def registrar_solicitud(request: Request, call_next):
         # Ejemplos: 200, 422 y 500.
         metricas["codigos_http"][str(response.status_code)] += 1
 
+        # MÉTRICAS PROMETHEUS
+        REQUESTS_TOTAL.inc()
+
+        HTTP_RESPONSES_TOTAL.labels(
+            status_code=str(response.status_code),
+        ).inc()
+
+        REQUEST_LATENCY_SECONDS.observe(
+            latencia_ms / 1000,
+        )
+
     # Registrar información de la solicitud en consola y archivo.
     logger.info(
         "Solicitud | metodo=%s | ruta=%s | estado=%s | latencia_ms=%.3f",
@@ -447,6 +566,20 @@ def health() -> dict[str, str]:
     }
 
 # ============================================================
+# BLOQUE 15. ENDPOINT GET /model-metadata
+# ============================================================
+
+@app.get(
+    "/model-metadata",
+    tags=["Modelo"],
+)
+def model_metadata():
+    """
+    Devuelve los metadatos del modelo actualmente desplegado.
+    """
+    return metadata_modelo
+
+# ============================================================
 # BLOQUE 15. ENDPOINT GET /metrics
 # ============================================================
 # AQUÍ SE IMPLEMENTA:
@@ -461,6 +594,92 @@ def metrics() -> dict:
     """
 
     return resumen_metricas()
+
+# ============================================================
+# BLOQUE 16. ENDPOINT GET /model-monitoring
+# ============================================================
+@app.get(
+    "/model-monitoring",
+    tags=["Monitoreo"],
+)
+def model_monitoring():
+    """
+    Devuelve un resumen operativo del modelo.
+    """
+
+    resumen = resumen_metricas()
+
+    return {
+        "modelo": VERSION_MODELO,
+        "estado": "operativo",
+
+        "solicitudes_totales":
+            resumen["solicitudes_totales"],
+
+        "predicciones_validas":
+            resumen["predicciones_validas"],
+
+        "predicciones_alto_riesgo":
+            resumen["predicciones_alto_riesgo"],
+
+        "predicciones_bajo_riesgo":
+            resumen["predicciones_bajo_riesgo"],
+
+        "errores_validacion":
+            resumen["errores_validacion"],
+
+        "errores_internos":
+            resumen["errores_internos"],
+
+        "solicitudes_con_anomalias":
+            resumen["solicitudes_con_anomalias"],
+
+        "latencia_promedio_ms":
+            resumen["latencia_promedio_ms"],
+
+        "latencia_maxima_ms":
+            resumen["latencia_maxima_ms"],
+    }
+
+# ============================================================
+# BLOQUE 17. ENDPOINT GET /model-drift
+# ============================================================
+
+@app.get(
+    "/model-drift",
+    tags=["Monitoreo"],
+)
+def model_drift():
+    """
+    Indicador básico de drift utilizando anomalías observadas.
+    """
+
+    resumen = resumen_metricas()
+
+    total = resumen["solicitudes_totales"]
+
+    anomalias = resumen["solicitudes_con_anomalias"]
+
+    porcentaje = (
+        (anomalias / total) * 100
+        if total
+        else 0
+    )
+
+    drift_detectado = (
+        porcentaje >= DRIFT_THRESHOLD
+    )
+
+    return {
+        "drift_detectado": drift_detectado,
+        "solicitudes_totales": total,
+        "solicitudes_con_anomalias": anomalias,
+        "porcentaje_anomalias": round(
+            porcentaje,
+            2,
+        ),
+        "umbral_alerta": 10,
+    }
 
 # ============================================================
 # BLOQUE 16. ENDPOINT POST /predict
@@ -509,6 +728,12 @@ def predict(datos: ClienteEntrada) -> PrediccionSalida:
             else "bajo_riesgo"
         )
 
+        # MÉTRICAS PROMETHEUS
+        # Registrar el resultado de la predicción para
+        # posteriores consultas desde Prometheus y Grafana.
+        PREDICCIONES_TOTAL.labels(
+            resultado=etiqueta,
+        ).inc()
 
         # Paso 5. Actualizar las métricas de predicción.
         with metricas_lock:
@@ -517,6 +742,9 @@ def predict(datos: ClienteEntrada) -> PrediccionSalida:
 
             if alertas:
                 metricas["solicitudes_con_anomalias"] += 1
+                # Registrar una solicitud con datos fuera del rango histórico observado
+                # durante el entrenamiento.
+                ANOMALIAS_TOTAL.inc()
 
         # Paso 6. Registrar una advertencia si existen datos atípicos.
         if alertas:
@@ -556,3 +784,24 @@ def predict(datos: ClienteEntrada) -> PrediccionSalida:
             status_code=500,
             detail="No fue posible generar la predicción.",
         ) from exc
+
+# ============================================================
+# ENDPOINT PROMETHEUS
+# ============================================================
+@app.get(
+    "/prometheus",
+    tags=["Monitoreo"],
+)
+def obtener_metricas_prometheus():
+    """
+    Expone métricas compatibles con Prometheus.
+
+    Este endpoint es consultado periódicamente
+    por Prometheus para recopilar indicadores
+    operativos de la API.
+    """
+
+    return Response(
+        generate_latest(),
+        media_type=CONTENT_TYPE_LATEST,
+    )

@@ -11,5 +11,6 @@
     "accuracy": 0.825,
     "f1_score": 0.8659,
     "auc_roc": 0.8749
-  }
+  },
+  "author": "Ivan Mamani Condori"
 }

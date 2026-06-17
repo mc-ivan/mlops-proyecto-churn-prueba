@@ -24,6 +24,7 @@ DOCS_DIR = PROJECT_ROOT / "docs"
 MODEL_PATH = MODELS_DIR / "modelo_churn_v1.joblib"
 METADATA_PATH = MODELS_DIR / "modelo_churn_v1_metadata.json"
 METRICS_PATH = DOCS_DIR / "metricas_modelo.md"
+AUTHOR = "Ivan Mamani Condori"
 
 def generar_datos_sinteticos(n_registros: int = 800):
 
@@ -100,6 +101,7 @@ def entrenar_y_guardar_modelo():
         ],
         "version_sklearn": sklearn.__version__,
         "metricas": metricas,
+        "author": AUTHOR
     }
 
     METADATA_PATH.write_text(
